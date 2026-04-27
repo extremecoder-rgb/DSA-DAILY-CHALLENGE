@@ -42,9 +42,10 @@ int lengthLoop(Node* head){
     Node* fast = head;
     while(fast != nullptr && fast->next != nullptr){
         slow = slow->next;
-        fast = fast->next;
+        fast = fast->next->next;
         if(slow == fast) return findLength(slow,fast);
     }
+    return 0;
 }
 
 int main(){
